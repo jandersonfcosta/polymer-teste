@@ -1,0 +1,45 @@
+<dom-module id="component-header">
+
+    <style>
+        :host {
+            text-align: center;
+            color: #fff;
+            background-color: #3F51B5;
+            display: block;
+            padding: 32px;
+        }
+
+        .header {
+            text-align: left;
+            width: 900px;
+            display: inline-block;
+        }
+    </style>
+
+    <template>
+        <div>
+            <div class="header">
+                <h1 on-click="handleClick">[[ title ]]</h1>
+                [[ description ]]
+            </div>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "component-header",
+            properties: {
+                title: String,
+                description: String
+            },
+            handleClick: function() {
+                console.log("Click!!");
+            },
+            ready: function() {
+                console.log(this.title);
+                console.log(this.description);
+            }
+        });
+    </script>
+
+</dom-module>

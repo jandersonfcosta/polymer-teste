@@ -1,0 +1,40 @@
+<dom-module id="component-items">
+
+    <style>
+        .item {
+             padding: 1em;
+             background-color: #fff;
+             border-radius: 2px;
+             margin-bottom: .5em;
+        }
+    </style>
+
+    <template>
+        <h3>Items</h3>
+        <template is="dom-repeat" items="{{ products }}">
+            <div class="item">
+                <b>{{ item.name }}</b>
+                <div>{{ item.description }}</div>
+            </div>
+        </template>
+    </template>
+
+    <script>
+        Polymer({
+            is: "component-items",
+            ready: function() {
+                this.products = [
+                    { name: "item 1", description: "item 1 description" },
+                    { name: "item 2", description: "item 2 description" },
+                    { name: "item 3", description: "item 3 description" },
+                    { name: "item 4", description: "item 4 description" },
+                    { name: "item 1", description: "item 1 description" },
+                    { name: "item 2", description: "item 2 description" },
+                    { name: "item 3", description: "item 3 description" },
+                    { name: "item 4", description: "item 4 description" }
+                ];
+            }
+        });
+    </script>
+
+</dom-module>

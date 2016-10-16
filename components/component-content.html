@@ -1,0 +1,25 @@
+<dom-module id="component-content">
+
+    <style>
+        :host {
+            text-align: left;
+            display: inline-block;
+            padding: 32px;
+            width: 600px;
+            white-space: normal;
+        }
+    </style>
+
+    <template>
+        <h1>This is a content</h1>
+        This is a content
+        <content></content>
+    </template>
+
+    <script>
+        Polymer({
+            is: "component-content"
+        });
+    </script>
+
+</dom-module>

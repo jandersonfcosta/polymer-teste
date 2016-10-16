@@ -1,0 +1,70 @@
+<dom-module id="page-content">
+
+    <template>
+        <div>
+            <h1>This is a content</h1>
+            This is a content
+
+            <h3>Repeat element</h3>
+            <template is="dom-repeat" items="{{ products }}">
+                <div class="item">
+                    <b>{{ item.name }}</b>
+                    <div>{{ item.description }}</div>
+                </div>
+            </template>
+
+            <h3>Array: {{ teste }}</h3>
+            Posição 0: {{ teste.0 }}<br>
+            Posição 1: {{ teste.1 }}
+        </div>
+
+        <style>
+             :host {
+                color: #000;
+                background-color: #eee;
+                display: block;
+                position: fixed;
+                top: 200px;
+                bottom: 200px;
+                left: 314px;
+                width: 60%;
+                padding: 32px;
+                overflow-y: auto;
+            }
+
+            .item {
+                padding: 1em;
+                background-color: #fff;
+                border-radius: 2px;
+                display: block;
+                margin-bottom: .25em;
+                width: auto;
+            }
+        </style>
+
+    </template>
+
+    <script>
+        var teste = "teste!!"
+
+        Polymer({
+            is: "page-content",
+            ready: function() {
+                this.products = [
+                    { name: "item 1", description: "item 1 description" },
+                    { name: "item 2", description: "item 2 description" },
+                    { name: "item 3", description: "item 3 description" },
+                    { name: "item 4", description: "item 4 description" }
+                ];
+
+                this.teste = ["teste 1", "teste 2", "teste 3"]
+                // console.log(Polymer.dom(this.root));
+                //
+                // var x = document.querySelector("h1")
+                // console.log(x.innerHTML);
+                // console.log(teste);
+            }
+        });
+    </script>
+
+</dom-module>
