@@ -13,7 +13,7 @@ h1 {
 
 .wrapper {
 	background-color: #eee;
-	width: 900px;
+	max-width: 900px;
 	position: relative;
 	top: 50px;
 	display: flex;
